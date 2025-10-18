@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jogodavelha.MainPage">
+
+    <!--Similar to CSS in HTML-->
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor"
+                    Value="transparent"/>
+            <Setter Property="TextColor"
+                    Value="White"/>
+            <Setter Property="FontSize"
+                    Value="80"/>
+            <Setter Property="BorderWidth"
+                    Value="3"/>
+            <Setter Property="BorderColor"
+                    Value="White"/>
+            <!--
+            Used AI to apply the shadow to the properties using this doc as referent:
+            https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-9.0&viewFallbackFrom=net-maui-8.0
+            -->
+            <Setter Property="Shadow">
+                <Setter.Value>
+                    <Shadow Brush="Black"
+                            Offset="10,10"
+                            Opacity="1" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <!--Allow us to use a table-style layout-->
+    <Grid RowDefinitions="*, *, *, *"
+          ColumnDefinitions="*, *, *"
+          ColumnSpacing="10"
+          RowSpacing="10"
+          Margin="10">
+
+        <!--
+        reference https://stackoverflow.com/questions/73671695/net-maui-full-scale-background-image-overlay-elements
+        -->
+         <Image
+            Source="background.jpg"
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="4"
+            Aspect="Fill"
+            />
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
+               Text="Tic Tac Toe"
+               FontSize="50"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center">
+               <!--
+               reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0
+               -->
+               <Label.Shadow>
+                <Shadow Brush="Black"
+                Offset="10,10"
+                Opacity="1" />
+               </Label.Shadow>
+               </Label>       
+
+        <Button x:Name="btn10"
+                Grid.Row="1"
+                Grid.Column="0"
+                Clicked="Button_Clicked"/>
+        <Button x:Name="btn11"
+                Grid.Row="1"
+                Grid.Column="1"
+                Clicked="Button_Clicked"/>
+        <Button
+            x:Name="btn12"
+            Grid.Row="1"
+            Grid.Column="2"
+            Clicked="Button_Clicked"/>
+
+        <Button x:Name="btn20"
+                Grid.Row="2"
+                Grid.Column="0"
+                Clicked="Button_Clicked"/>
+        <Button x:Name="btn21"
+                Grid.Row="2"
+                Grid.Column="1"
+                Clicked="Button_Clicked"/>
+        <Button x:Name="btn22"
+                Grid.Row="2"
+                Grid.Column="2"
+                Clicked="Button_Clicked"/>
+
+        <Button x:Name="btn30"
+                Grid.Row="3"
+                Grid.Column="0"
+                Clicked="Button_Clicked"/>
+        <Button x:Name="btn31"
+                Grid.Row="3"
+                Grid.Column="1"
+                Clicked="Button_Clicked"/>
+        <Button x:Name="btn32"
+                Grid.Row="3"
+                Grid.Column="2"
+                Clicked="Button_Clicked"/>
+    </Grid>
+
+
+
+</ContentPage>
