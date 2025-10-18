@@ -53,7 +53,8 @@
                Text="Tic Tac Toe"
                FontSize="50"
                HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center">
+               VerticalTextAlignment="Center"
+               TextColor="White">
                <!--
                reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0
                -->
