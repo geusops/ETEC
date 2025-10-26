@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HotelApp.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FF0666B9">
+
+       <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                            Padding="10"
+                            Spacing="10">
+
+              <Label Text="Cálculo da Diária"
+                     FontFamily="SmoochSans"
+                     FontSize="50"
+                     TextColor="White"
+                     HorizontalTextAlignment="Center">
+                     <!--
+                     reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0
+                     -->
+                     <Label.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="5,5"
+                                    Opacity="1"/>
+                     </Label.Shadow>
+              </Label>
+
+              <Frame Padding="10">
+                     <VerticalStackLayout>
+                            <!--added Padding and Martin to make the Grid prettier-->
+                            <Grid RowDefinitions="Auto, Auto"
+                                  ColumnDefinitions="*, *, 2*"
+                                  Padding="10"
+                                   Margin="10" >
+
+                                   <Label Grid.Row="0"
+                                          Grid.Column="0"
+                                          Text="Adultos:"
+                                          FontFamily="SmoochSans"/>
+
+                                   <Label Grid.Row="0"
+                                          Grid.Column="1"
+                                          TextColor="{StaticResource Primary}"
+                                          Text="{Binding Value}"
+                                          BindingContext="{x:Reference stp_adultos}"
+                                          FontFamily="SmoochSans"/>
+
+                                   <Stepper Grid.Row="0"
+                                            Grid.Column="2"
+                                            x:Name="stp_adultos"
+                                            Minimum="0"
+                                            Maximum="10"
+                                            Increment="1"/>
+
+                                   <Label Grid.Row="1"
+                                          Grid.Column="0"
+                                          Text="Crianças:"
+                                          FontFamily="SmoochSans"/>
+
+                                   <Label Grid.Row="1"
+                                          Grid.Column="1"
+                                          TextColor="{StaticResource Primary}"
+                                          Text="{Binding Value}"
+                                          BindingContext="{x:Reference stp_criancas}"
+                                          FontFamily="SmoochSans"/>
+
+                                   <Stepper Grid.Row="1"
+                                            Grid.Column="2"
+                                            x:Name="stp_criancas"
+                                            Minimum="0"
+                                            Maximum="10"
+                                            Increment="1"/>
+                            </Grid>
+
+                            <Frame Padding="10"
+                                   Margin="10">
+                                   <VerticalStackLayout>
+
+                                          <Label Text="Escolha sua Suíte"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <Picker x:Name="pck_quarto"
+                                                  Title="Selecione sua Acomodação"/>
+                                   </VerticalStackLayout>
+                            </Frame>
+
+                            <Frame Padding="10"
+                                   Margin="10">
+                                   <VerticalStackLayout Spacing="10">
+
+                                          <Label Text="Período da Estadia"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                                 <Label Text="Check-in:"/>
+                                                 <DatePicker x:Name="dtpck_checkin"
+                                                             Format="dd/MM/yyyy"/>
+                                          </HorizontalStackLayout>
+
+                                          <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                                 <Label Text="Check-out:"/>
+                                                 <DatePicker x:Name="dtpck_checkout"
+                                                             Format="dd/MM/yyyy"/>
+                                          </HorizontalStackLayout>
+                                   </VerticalStackLayout>
+                            </Frame>
+
+                            <Button Text="Avançar"
+                                    BackgroundColor="#FF0666B9"
+                                    TextColor="White"
+                                    />
+
+                     </VerticalStackLayout>
+              </Frame>
+
+       </VerticalStackLayout>
+
+</ContentPage>
