@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2LY7y+boV+s=",
+  "dgSpecHash": "AVqpcfZcUqA=",
   "success": true,
   "projectFilePath": "/Users/geu/Documents/ETEC/Agenda 13/HotelApp/HotelApp.csproj",
   "expectedPackageFiles": [
@@ -107,7 +107,15 @@
     "/Users/geu/.nuget/packages/xamarin.kotlin.stdlib.jdk8/1.9.0.1/xamarin.kotlin.stdlib.jdk8.1.9.0.1.nupkg.sha512",
     "/Users/geu/.nuget/packages/xamarin.kotlinx.coroutines.android/1.7.2.1/xamarin.kotlinx.coroutines.android.1.7.2.1.nupkg.sha512",
     "/Users/geu/.nuget/packages/xamarin.kotlinx.coroutines.core.jvm/1.7.2.1/xamarin.kotlinx.coroutines.core.jvm.1.7.2.1.nupkg.sha512",
-    "/Users/geu/.nuget/packages/microsoft.android.ref.34/34.0.154/microsoft.android.ref.34.34.0.154.nupkg.sha512"
+    "/Users/geu/.nuget/packages/microsoft.netcore.app.runtime.mono.android-arm/8.0.21/microsoft.netcore.app.runtime.mono.android-arm.8.0.21.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.netcore.app.runtime.mono.android-arm64/8.0.21/microsoft.netcore.app.runtime.mono.android-arm64.8.0.21.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.netcore.app.runtime.mono.android-x86/8.0.21/microsoft.netcore.app.runtime.mono.android-x86.8.0.21.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.netcore.app.runtime.mono.android-x64/8.0.21/microsoft.netcore.app.runtime.mono.android-x64.8.0.21.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.android.ref.34/34.0.154/microsoft.android.ref.34.34.0.154.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.android.runtime.34.android-arm/34.0.154/microsoft.android.runtime.34.android-arm.34.0.154.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.android.runtime.34.android-arm64/34.0.154/microsoft.android.runtime.34.android-arm64.34.0.154.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.android.runtime.34.android-x86/34.0.154/microsoft.android.runtime.34.android-x86.34.0.154.nupkg.sha512",
+    "/Users/geu/.nuget/packages/microsoft.android.runtime.34.android-x64/34.0.154/microsoft.android.runtime.34.android-x64.34.0.154.nupkg.sha512"
   ],
   "logs": []
 }
