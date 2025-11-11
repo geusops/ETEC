@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HotelApp.Views.Sobre"
+             Title="Sobre"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FF0666B9">
+
+       <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                            Padding="10"
+                            Spacing="10">
+
+              <Label Text="Sobre"
+                     FontFamily="SmoochSans-Medium"
+                     TextTransform="Uppercase"
+                     FontSize="50"
+                     TextColor="White"
+                     HorizontalTextAlignment="Center">
+                     <!--
+                     reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0 as used in the previous activity
+                     -->
+                     <Label.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="5,5"
+                                    Opacity="1"/>
+                     </Label.Shadow>
+              </Label>
+
+              <Frame Padding="10">
+                     <VerticalStackLayout
+                            Padding="10"
+                            Margin="10">
+                            <!--
+                            I changed the font family and font size
+                            -->
+                            <Label Text="Nome do desenvolvedor/Developer's name:"
+                                   FontSize="Title"
+                                   TextColor="{StaticResource Primary}"
+                                   FontFamily="SmoochSans-Medium"/>
+                            <Label FontSize="Title"
+                                   TextColor="Black"
+                                   FontFamily="SmoochSans-light">
+                                   Geuso Pinheiro da Silva
+                            </Label>
+                            <!-- I wanted to have spacing between "Nome", "Desenvolvido em" e "Proposito".
+                            I did a google search for "line break label maui"
+                            Reference: https://stackoverflow.com/questions/73571392/label-controls-maxline-and-linebreakmode-properties-are-not-working-properly -->
+                            <Label Text="Desenvolvido em/Developed in:"
+                                   FontSize="Title"
+                                   TextColor="{StaticResource Primary}"
+                                   FontFamily="SmoochSans-Medium"
+                                   Margin="0,20,0,0"/>
+                            <Label FontSize="Title"
+                                   TextColor="Black"
+                                   FontFamily="SmoochSans-light">
+                                   <!--
+                                   I tried to use this syntax
+                                   <Label.Text>
+                                          Domingo, 26 de outubro de 2025
+                                          Sunday, October 26, 2025
+                                   </Label.Text>
+
+                                   There's a bug with spacing. Check erro1.png
+                                   Ref: https://github.com/dotnet/maui/issues/21605
+
+                                   Found by searching for "long texts maui"
+
+                                   I tried the proposed solution here:
+                                   https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/label?view=net-maui-9.0&viewFallbackFrom=net-maui-8.0#add-new-lines-->
+                                   Domingo, 26 de outubro de 2025&#10;Sunday, October 26, 2025
+                            </Label>
+                            <Label Text="Propósito/Purpose"
+                                   FontSize="Title"
+                                   TextColor="{StaticResource Primary}"
+                                   FontFamily="SmoochSans-Medium"
+                                   Margin="0,20,0,0"/>
+                            <Label FontSize="Title"
+                                   TextColor="Black"
+                                   FontFamily="SmoochSans-light">
+                                   <!--
+                                   Same solution as above
+                                   -->
+                                   Nessa atividade eu exercito a criação e personalização de telas. Estamos usando o .NET Maui para desenvolver aplicativos multiplataforma.&#10;In this activity, I create and customize screens. We're using .NET Maui to develop cross-platform applications.
+                            </Label>
+                     </VerticalStackLayout>
+              </Frame>
+       </VerticalStackLayout>
+</ContentPage>

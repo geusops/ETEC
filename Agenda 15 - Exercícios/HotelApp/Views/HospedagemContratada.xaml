@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HotelApp.Views.HospedagemContratada"
+             Title="HospedagemContratada"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FF0666B9">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10"
+                         Spacing="10">
+
+        <Label Text="{Binding QuartoSelecionado.Descricao}"
+               FontFamily="SmoochSans"
+               FontSize="50"
+               TextColor="White"
+               HorizontalTextAlignment="Center">
+            <!--
+                     reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0
+                     -->
+            <Label.Shadow>
+                <Shadow Brush="Black"
+                        Offset="5,5"
+                        Opacity="1"/>
+            </Label.Shadow>
+        </Label>
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Frame Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Adultos: "/>
+                            <Label Text="{Binding QntAdultos}"
+                                   TextColor="{StaticResource Primary}"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Crianças: "/>
+                            <Label Text="{Binding QntCriancas}"
+                                   TextColor="{StaticResource Primary}"/>
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="10">
+                    <Grid ColumnDefinitions="*,*,*"
+                          RowDefinitions="Auto, Auto">
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Check-in: "/>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Text="Check-out: "/>
+                        <Label Grid.Row="0"
+                               Grid.Column="2"
+                               Text="Estadia: "/>
+
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="{Binding DataCheckin, StringFormat='{0:dd/MM/yyyy}'}"
+                               TextColor="{StaticResource Primary}"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="{Binding DataCheckout, StringFormat='{0:dd/MM/yyyy}'}"
+                               TextColor="{StaticResource Primary}"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="2"
+                               Text="{Binding Estadia}"
+                               TextColor="{StaticResource Primary}"/>
+                    </Grid>
+                </Frame>
+                <Frame Margin="10">
+                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                        <Label Text="Total: "
+                                Grid.Column="1"/>
+                        <Label Text="{Binding ValorTotal, StringFormat='{0:c}'}"
+                            TextColor="{StaticResource Primary}"
+                                Grid.Column="1"/>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button Text="Voltar"
+                        HorizontalOptions="Center"
+                        Clicked="Button_Clicked"
+                        BackgroundColor="#FF0666B9"
+                        TextColor="White"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
