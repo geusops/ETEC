@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginMaui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ecc88910eed28677f82de840b928c6ed67dac63c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+7271c36d0df3b1bab2a0238fd0d7a0e64388ec19")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginMaui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginMaui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

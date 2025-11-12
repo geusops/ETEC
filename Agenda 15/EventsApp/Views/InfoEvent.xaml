@@ -1,0 +1,142 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EventsApp.Views"
+             x:Class="EventsApp.Views.InfoEvent"
+             Title="Event Information"
+             NavigationPage.HasNavigationBar="False">
+
+
+       <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                            Padding="10"
+                            Spacing="10">
+
+              <Frame Padding="10"
+                            BackgroundColor="LightGray">
+                     <VerticalStackLayout>
+
+                            <Label Text="Cálculo da Diária"
+                                   FontFamily="SmoochSans"
+                                   TextTransform="Uppercase"
+                                   FontSize="40"
+                                   TextColor="#FF0666B9"
+                                   HorizontalTextAlignment="Center">
+                                   <!--
+                     reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0
+                     -->
+                                   <Label.Shadow>
+                                          <Shadow Brush="white"
+                                                  Offset="5,5"
+                                                  Opacity="1"/>
+                                   </Label.Shadow>
+                            </Label>
+
+                            <Frame Padding="10"
+                                   Margin="10">
+                                   <VerticalStackLayout Spacing="10">
+
+                                          <!--Nome do evento-->
+                                          <Label Text="Nome do evento"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+                                          <Entry Placeholder="Digite o nome do evento"
+                                                 x:Name="txt_nome_evento"
+                                                 FontFamily="SmoochSans">
+
+                                          </Entry>
+
+                                          <!--Período do evento-->
+                                          <Label Text="Período do evento"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+
+                                                 <Label Text="Data de início: "/>
+                                                 <DatePicker x:Name="dtpck_inicio"
+                                                             Format="dd/MM/yyyy"/>
+
+                                                 <Label Text="Data de término: "/>
+                                                 <DatePicker x:Name="dtpck_termino"
+                                                             Format="dd/MM/yyyy"/>
+
+
+                                          <!--Número de participantes-->
+                                          <Label Text="Número de participantes"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+                                          <Entry Placeholder="Número de participantes"
+                                                 Keyboard="Numeric"
+                                                 x:Name="txt_numero_quartos"
+                                                 FontFamily="SmoochSans">
+
+                                          </Entry>
+                                          <!--Local do evento-->
+                                          <Label Text="Local do evento"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+                                          <Entry Placeholder="Digite o local do evento"
+                                                 Keyboard="Numeric"
+                                                 x:Name="txt_local_Evento"
+                                                 FontFamily="SmoochSans">
+
+                                          </Entry>
+
+                                          <!--Custo por participante-->
+                                          <Label Text="Custo por participante"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+                                          <Entry Placeholder="Digite o custo por participante"
+                                                 Keyboard="Numeric"
+                                                 x:Name="txt_custo_participante"
+                                                 FontFamily="SmoochSans">
+
+                                          </Entry>
+                                   </VerticalStackLayout>
+                            </Frame>
+                            <!--
+                            <Frame Padding="10"
+                                   Margin="10">
+                                   <VerticalStackLayout Spacing="10">
+
+                                          <Label Text="Período da Estadia"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                                 <Label Text="Check-in: "/>
+                                                 <DatePicker x:Name="dtpck_checkin"
+                                                             DateSelected="dtpck_checkin_DateSelected"
+                                                             Format="dd/MM/yyyy"/>
+                                          </HorizontalStackLayout>
+
+                                          <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                                                 <Label Text="Check-out: "/>
+                                                 <DatePicker x:Name="dtpck_checkout"
+                                                             Format="dd/MM/yyyy"/>
+                                          </HorizontalStackLayout>
+                                   </VerticalStackLayout>
+                            </Frame>
+                            
+
+                            <Button Text="Avançar"
+                                    BackgroundColor="#FF0666B9"
+                                    TextColor="White"
+                                    Clicked="Button_Clicked"
+                                    HorizontalOptions ="Center"/>
+-->
+                     </VerticalStackLayout>
+              </Frame>
+
+       </VerticalStackLayout>
+</ContentPage>

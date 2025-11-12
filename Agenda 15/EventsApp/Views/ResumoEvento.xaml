@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EventsApp.Views"
+             x:Class="EventsApp.Views.InfoEvent"
+             Title="Event Information">
+         <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                             Padding="10"
+                             Spacing="10">
+    
+                  <Label Text="Event Information Page"
+                        FontSize="30"
+                        HorizontalTextAlignment="Center"
+                        TextColor="#FF0666B9"
+                        FontFamily="SmoochSans"/>
+    
+                  <Label Text="This is where event details will be displayed."
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        FontFamily="SmoochSans"/> 
+                        </VerticalStackLayout>
+</ContentPage>
