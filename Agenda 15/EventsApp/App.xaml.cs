@@ -6,7 +6,7 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new NavigationPage(new Views.ResumoEvento());
+		MainPage = new NavigationPage(new Views.InfoEvent());
 		//MainPage = new AppShell();
 		Application.Current.UserAppTheme = AppTheme.Light;
 	}

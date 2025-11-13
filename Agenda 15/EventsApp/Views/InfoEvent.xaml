@@ -4,17 +4,19 @@
              xmlns:local="clr-namespace:EventsApp.Views"
              x:Class="EventsApp.Views.InfoEvent"
              Title="Event Information"
-             NavigationPage.HasNavigationBar="False">
-
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="test1.png">
 
        <VerticalStackLayout VerticalOptions="CenterAndExpand"
                             Padding="10"
-                            Spacing="10">
+                            Spacing="10"
+                            BackgroundColor="Transparent">
 
               <Frame Padding="10"
-                            BackgroundColor="LightGray">
-                     <VerticalStackLayout>
+                     BackgroundColor="Transparent"
+                     BorderColor="Transparent">
 
+                     <VerticalStackLayout>
                             <Label Text="Cálculo da Diária"
                                    FontFamily="SmoochSans"
                                    TextTransform="Uppercase"
@@ -25,14 +27,17 @@
                      reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0
                      -->
                                    <Label.Shadow>
-                                          <Shadow Brush="white"
+                                          <Shadow Brush="#F8FAFC"
                                                   Offset="5,5"
-                                                  Opacity="1"/>
+                                                  Opacity="0.5"/>
                                    </Label.Shadow>
                             </Label>
 
                             <Frame Padding="10"
-                                   Margin="10">
+                                   Margin="10"
+                                   BackgroundColor="#80FFFFFF">
+                                   <!--Google search: background color transparency maui
+                                   reference: https://stackoverflow.com/questions/71928071/maui-how-to-make-the-background-color-transparent-->
                                    <VerticalStackLayout Spacing="10">
 
                                           <!--Nome do evento-->
@@ -42,8 +47,10 @@
                                                  TextColor="{StaticResource Primary}"
                                                  FontFamily="SmoochSans"/>
                                           <Entry Placeholder="Digite o nome do evento"
+                                                 PlaceholderColor="Black"
                                                  x:Name="txt_nome_evento"
-                                                 FontFamily="SmoochSans">
+                                                 FontFamily="SmoochSans"
+                                                 TextColor="Black">
 
                                           </Entry>
 
@@ -54,13 +61,14 @@
                                                  TextColor="{StaticResource Primary}"
                                                  FontFamily="SmoochSans"/>
 
-                                                 <Label Text="Data de início: "/>
-                                                 <DatePicker x:Name="dtpck_inicio"
-                                                             Format="dd/MM/yyyy"/>
+                                          <Label Text="Data de início: "/>
+                                          <DatePicker x:Name="dtpck_inicio"
+                                                 DateSelected="dtpck_inicio_DateSelected"
+                                                      Format="dd/MM/yyyy"/>
 
-                                                 <Label Text="Data de término: "/>
-                                                 <DatePicker x:Name="dtpck_termino"
-                                                             Format="dd/MM/yyyy"/>
+                                          <Label Text="Data de término: "/>
+                                          <DatePicker x:Name="dtpck_termino"
+                                                      Format="dd/MM/yyyy"/>
 
 
                                           <!--Número de participantes-->
@@ -68,10 +76,18 @@
                                                  TextTransform="Uppercase"
                                                  FontSize="Subtitle"
                                                  TextColor="{StaticResource Primary}"
-                                                 FontFamily="SmoochSans"/>
+                                                 FontFamily="SmoochSans">
+                                                 <Label.Shadow>
+                                                        <Shadow Brush="LightGray"
+                                                                Offset="5,5"
+                                                                Opacity="0.8"/>
+                                                 </Label.Shadow>
+                                                 
+                                                 </Label>
                                           <Entry Placeholder="Número de participantes"
+                                                 PlaceholderColor="Black"
                                                  Keyboard="Numeric"
-                                                 x:Name="txt_numero_quartos"
+                                                 x:Name="txt_numero_participantes"
                                                  FontFamily="SmoochSans">
 
                                           </Entry>
@@ -80,8 +96,16 @@
                                                  TextTransform="Uppercase"
                                                  FontSize="Subtitle"
                                                  TextColor="{StaticResource Primary}"
-                                                 FontFamily="SmoochSans"/>
+                                                 FontFamily="SmoochSans">
+                                                 <Label.Shadow>
+                                                        <Shadow Brush="LightGray"
+                                                                Offset="5,5"
+                                                                Opacity="0.8"/>
+                                                 </Label.Shadow>
+                                                 
+                                                 </Label>
                                           <Entry Placeholder="Digite o local do evento"
+                                                 PlaceholderColor="Black"
                                                  Keyboard="Numeric"
                                                  x:Name="txt_local_Evento"
                                                  FontFamily="SmoochSans">
@@ -93,8 +117,15 @@
                                                  TextTransform="Uppercase"
                                                  FontSize="Subtitle"
                                                  TextColor="{StaticResource Primary}"
-                                                 FontFamily="SmoochSans"/>
+                                                 FontFamily="SmoochSans">
+                                                 <Label.Shadow>
+                                                        <Shadow Brush="LightGray"
+                                                                Offset="5,5"
+                                                                Opacity="0.8"/>
+                                                 </Label.Shadow>
+                                          </Label>
                                           <Entry Placeholder="Digite o custo por participante"
+                                                 PlaceholderColor="Black"
                                                  Keyboard="Numeric"
                                                  x:Name="txt_custo_participante"
                                                  FontFamily="SmoochSans">
@@ -102,41 +133,10 @@
                                           </Entry>
                                    </VerticalStackLayout>
                             </Frame>
-                            <!--
-                            <Frame Padding="10"
-                                   Margin="10">
-                                   <VerticalStackLayout Spacing="10">
-
-                                          <Label Text="Período da Estadia"
-                                                 TextTransform="Uppercase"
-                                                 FontSize="Subtitle"
-                                                 TextColor="{StaticResource Primary}"
-                                                 FontFamily="SmoochSans"/>
-
-                                          <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                                                 <Label Text="Check-in: "/>
-                                                 <DatePicker x:Name="dtpck_checkin"
-                                                             DateSelected="dtpck_checkin_DateSelected"
-                                                             Format="dd/MM/yyyy"/>
-                                          </HorizontalStackLayout>
-
-                                          <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                                                 <Label Text="Check-out: "/>
-                                                 <DatePicker x:Name="dtpck_checkout"
-                                                             Format="dd/MM/yyyy"/>
-                                          </HorizontalStackLayout>
-                                   </VerticalStackLayout>
-                            </Frame>
-                            
-
                             <Button Text="Avançar"
-                                    BackgroundColor="#FF0666B9"
-                                    TextColor="White"
-                                    Clicked="Button_Clicked"
-                                    HorizontalOptions ="Center"/>
--->
+                                    FontSize="20"
+                                    Clicked="Button_Clicked"/>
                      </VerticalStackLayout>
               </Frame>
-
        </VerticalStackLayout>
 </ContentPage>

@@ -2,21 +2,142 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:EventsApp.Views"
-             x:Class="EventsApp.Views.InfoEvent"
-             Title="Event Information">
-         <VerticalStackLayout VerticalOptions="CenterAndExpand"
-                             Padding="10"
-                             Spacing="10">
-    
-                  <Label Text="Event Information Page"
-                        FontSize="30"
-                        HorizontalTextAlignment="Center"
-                        TextColor="#FF0666B9"
-                        FontFamily="SmoochSans"/>
-    
-                  <Label Text="This is where event details will be displayed."
-                        FontSize="16"
-                        HorizontalTextAlignment="Center"
-                        FontFamily="SmoochSans"/> 
-                        </VerticalStackLayout>
+             x:Class="EventsApp.Views.ResumoEvento"
+             Title="Event Information"
+             BackgroundImageSource="test1.png">
+
+
+       <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                            Padding="10"
+                            Spacing="10"
+                            BackgroundColor="Transparent">
+
+              <Frame Padding="10"
+                     BackgroundColor="Transparent"
+                     BorderColor="Transparent">
+
+                     <VerticalStackLayout >
+                            <Label Text="Resumo do evento"
+                                   FontFamily="SmoochSans"
+                                   TextTransform="Uppercase"
+                                   FontSize="40"
+                                   TextColor="#FF0666B9"
+                                   HorizontalTextAlignment="Center">
+                                   <!--
+                     reference: https://learn.microsoft.com/en-us/dotnet/maui/user-interface/shadow?view=net-maui-8.0
+                     -->
+                                   <Label.Shadow>
+                                          <Shadow Brush="#F8FAFC"
+                                                  Offset="5,5"
+                                                  Opacity="0.5"/>
+                                   </Label.Shadow>
+                            </Label>
+
+                            <Frame Padding="10"
+                                   Margin="10" BackgroundColor="#80FFFFFF"> 
+                                   <!--Google search: background color transparency maui
+                                   reference: https://stackoverflow.com/questions/71928071/maui-how-to-make-the-background-color-transparent-->
+                                   <VerticalStackLayout Spacing="10" BackgroundColor="transparent">
+
+                                          <!--Nome do evento-->
+                                          <Label Text="Nome do evento"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 TextColor="#1E293B"
+                                                 FontFamily="SmoochSans"/>
+                                          <Label Text="{Binding NomeEvento}"
+                                                 FontSize="20"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+                                          <!--Período do evento-->
+                                          <Label Text="Período do evento"
+                                                 TextTransform="Uppercase"
+                                                 TextColor="#1E293B"
+                                                 FontSize="Subtitle"
+                                                 FontFamily="SmoochSans"/>
+                                          <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto" Padding="10">
+                                                 <Label Text="Data de início: "
+                                                               FontSize="20"
+                                                               TextColor="{StaticResource Primary}"
+                                                               Grid.Column="0"
+                                                               Grid.Row="0"/>
+                                                 <Label Text="{Binding DataInicio, StringFormat='{}{0:dd/MM/yyy}'}"
+                                                               FontSize="20"
+                                                               Grid.Column="0"
+                                                               Grid.Row="1"/>
+
+                                                 <Label Text="Data de término: "
+                                                               FontSize="20"
+                                                               TextColor="{StaticResource Primary}"
+                                                               Grid.Column="1"
+                                                               Grid.Row="0"/>
+                                                 <Label Text="{Binding DataTermino, StringFormat='{}{0:dd/MM/yyy}'}"
+                                                               FontSize="20"
+                                                               Grid.Column="1"
+                                                               Grid.Row="1"/>
+
+                                                 <Label Text="Período total"
+                                                               FontSize="20"
+                                                               TextColor="{StaticResource Primary}"
+                                                               Grid.Column="2"
+                                                               Grid.Row="0"/>
+                                                 <Label Text="{Binding DuracaoDias}"
+                                                               FontSize="20"
+                                                               Grid.Column="2"
+                                                               Grid.Row="1"/>
+
+                                          </Grid>
+                                                 
+                                          <!--Número de participantes-->
+                                          <Label Text="Número de participantes"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 FontFamily="SmoochSans"/>
+                                          <Label Text="{Binding NumeroParticipantes}"
+                                                 FontSize="20"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <!--Local do evento-->
+                                          <Label Text="Local do evento"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <Label Text="{Binding LocalEvento}"
+                                                 FontSize="20"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <!--Custo por participante-->
+                                          <Label Text="Custo por participante"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <Label Text="{Binding CustoPorParticipante, StringFormat='{}{0:c}'}"
+                                                 FontSize="20"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <!--Custo total-->
+                                          <Label Text="Custo total"
+                                                 TextTransform="Uppercase"
+                                                 FontSize="Subtitle"
+                                                 FontFamily="SmoochSans"/>
+
+                                          <Label Text="{Binding CustoTotal, StringFormat='{}{0:c}'}"
+                                                 FontSize="20"
+                                                 TextColor="{StaticResource Primary}"
+                                                 FontFamily="SmoochSans"/>
+                                   </VerticalStackLayout>
+                            </Frame>
+                            <Button Text="Voltar"
+                                    Padding="10"
+                                    Clicked="Button_Clicked"/>
+
+                     </VerticalStackLayout>
+              </Frame>
+
+       </VerticalStackLayout>
 </ContentPage>

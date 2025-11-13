@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/geu/Documents/ETEC/Agenda 15/EventsApp/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/geu/Documents/ETEC/Agenda 15/EventsApp/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/EventsApp.app
